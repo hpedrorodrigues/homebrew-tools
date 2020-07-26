@@ -7,7 +7,7 @@ class Sphynx < Formula
     bin.install "sx"
     prefix.install "cli"
 
-    ["lint", "fmt"].each { | cmd |
+    ["lint", "fmt", "test"].each { | cmd |
       rm "#{prefix}/cli/#{cmd}"
     }
     ["dotfiles", "playbook"].each { | namespace |
@@ -18,12 +18,12 @@ class Sphynx < Formula
       s.gsub! /SPHYNX_DIR=.*/, "SPHYNX_DIR=\"#{prefix}\""
     end
 
-    ["sx.bash", "sx.zsh", "complete"].each { | completion |
+    ["sx.bash", "_sx", "complete"].each { | completion |
       inreplace "#{prefix}/cli/.internal/completion/#{completion}", "${SPHYNX_DIR:-}", "#{prefix}"
     }
 
     bash_completion.install "#{prefix}/cli/.internal/completion/sx.bash" => "sx"
-    zsh_completion.install "#{prefix}/cli/.internal/completion/sx.zsh" => "_sx"
+    zsh_completion.install "#{prefix}/cli/.internal/completion/_sx" => "_sx"
   end
 
   test do
