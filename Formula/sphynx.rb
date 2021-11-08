@@ -1,8 +1,8 @@
 class Sphynx < Formula
   desc "Command-line tool to help you with your day to day tasks"
   homepage "https://github.com/hpedrorodrigues/sphynx"
-  url "https://github.com/hpedrorodrigues/sphynx/archive/v0.1.15.tar.gz"
-  sha256 "0fa2fcc3b38a4bc6d64d37ca7e1cfea4c63f19fff80c9ffd3683796ab788d186"
+  url "https://github.com/hpedrorodrigues/sphynx/archive/v0.1.16.tar.gz"
+  sha256 "939cd6ce2a7db215339049cf3ba752c45eb14a1d1f9534c2354f15331f0413b9"
 
   def install
     bin.install "sx"
