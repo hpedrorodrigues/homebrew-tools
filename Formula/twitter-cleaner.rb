@@ -1,5 +1,5 @@
 class TwitterCleaner < Formula
-  desc "Automatically delete tweets, retweets, and favorites from your timeline."
+  desc "Command-line tool to help you delete tweets, retweets, and favorites from your timeline"
   homepage "https://github.com/hpedrorodrigues/twitter-cleaner"
   version "0.1.2"
   license "MIT"
