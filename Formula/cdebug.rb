@@ -1,12 +1,12 @@
 class Cdebug < Formula
   desc "Swiss army knife of container debugging"
   homepage "https://github.com/iximiuz/cdebug"
-  version "0.0.5"
+  version "0.0.13"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/iximiuz/cdebug/releases/download/v#{version}/cdebug_darwin_arm64.tar.gz"
-      sha256 "cdee08342bf164b7237b50034d1f046e60399c9173f0f0cbde82741ed2b3d7f8"
+      sha256 "4b2081a650fccdf395f0a07bd842dd9bf08961f77977b7d7e9bc7a306c1249f3"
 
       def install
         bin.install "cdebug"
@@ -14,7 +14,7 @@ class Cdebug < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/iximiuz/cdebug/releases/download/v#{version}/cdebug_darwin_amd64.tar.gz"
-      sha256 "6b4ca419d22a9d55315f584469642ed1efdc1a24e1bc2f653a10f50c817984c9"
+      sha256 "6220b2b2defc44fce054fe7de0c6316673c3d5568221df5cc9e1f2483374adbe"
 
       def install
         bin.install "cdebug"
@@ -24,7 +24,7 @@ class Cdebug < Formula
 
   on_linux do
     url "https://github.com/iximiuz/cdebug/releases/download/v#{version}/cdebug_linux_amd64.tar.gz"
-    sha256 "265c89271fa7da100f3cde0bfa65aec963dc968eb543ab0ee95046dc12827acc"
+    sha256 "67fce1cf5be2dade69df9ac0a590f360a32134b148db40b37fb18f12a2bedb51"
 
     def install
       bin.install "cdebug"
