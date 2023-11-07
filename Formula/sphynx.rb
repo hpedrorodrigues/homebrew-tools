@@ -1,26 +1,30 @@
 class Sphynx < Formula
   desc "Command-line tool to help you with your day to day tasks"
   homepage "https://github.com/hpedrorodrigues/sphynx"
-  url "https://github.com/hpedrorodrigues/sphynx/archive/v0.1.23.tar.gz"
-  sha256 "d4362153f51912cf5cd0e568e8a524b13fdce61f80bb3f9e3cd6ceb294a8a1f9"
+  url "https://github.com/hpedrorodrigues/sphynx/archive/v0.2.0.tar.gz"
+  sha256 "ac09b6a5b7a2a10583f20c71cd9ff2882f1a6797c379a47e46f9dc5852c1a188"
 
   def install
     bin.install "sx"
-    prefix.install "cli"
+    prefix.install "modules/cli"
 
-    ["lint", "fmt", "test"].each { | cmd |
-      rm "#{prefix}/cli/#{cmd}"
-    }
-    ["dotfiles", "playbook"].each { | namespace |
-      rm_rf "#{prefix}/cli/#{namespace}"
+    ["lint", "fmt", "test", "workstation"].each { | cmd |
+      rm_rf "#{prefix}/cli/#{cmd}"
     }
 
     inreplace "#{bin}/sx" do |s|
       s.gsub! /SPHYNX_DIR=.*/, "SPHYNX_DIR=\"#{prefix}\""
+      s.gsub! /SPHYNX_CLI_DIR=.*/, "SPHYNX_CLI_DIR=\"${SPHYNX_DIR}/cli\""
     end
 
-    ["sx.bash", "_sx", "complete"].each { | completion |
-      inreplace "#{prefix}/cli/.internal/completion/#{completion}", "${SPHYNX_DIR:-}", "#{prefix}"
+    inreplace "#{prefix}/cli/.internal/completion/complete" do |s|
+      s.gsub! /SPHYNX_CLI_DIR=.*/, "SPHYNX_CLI_DIR=\"#{prefix}/cli\""
+    end
+
+    ["sx.bash", "_sx"].each { | completion |
+      inreplace "#{prefix}/cli/.internal/completion/#{completion}" do |s|
+        s.gsub! /completion_dirname=.*/, "completion_dirname=\"#{prefix}/cli/.internal/completion\""
+      end
     }
 
     bash_completion.install "#{prefix}/cli/.internal/completion/sx.bash" => "sx"
