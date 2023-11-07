@@ -4,17 +4,24 @@ Personal/non-official formulas/casks.
 
 ### Testing formulas/casks
 
-You can use the following command(s) to test changes for a new formula or when
+The following command(s) can be used to test changes for a new formula or when
 editing an existing one:
 
 ```bash
-# brew install --build-from-source <path>
-# e.g.,
-♪ brew install --build-from-source ./Formula/sphynx.rb
+♪ brew install --build-from-source <path>
 
 # or
-♪ brew edit hpedrorodrigues/tools/sphynx
-♪ brew install hpedrorodrigues/tools/sphynx
 
-# you can then check files at /opt/homebrew/Cellar/sphynx/<version>/
+♪ brew edit <formula> && brew install <formula>
 ```
+
+Also, it's possible to use the following command to check a formula for Homebrew
+coding style violations:
+
+```bash
+♪ brew audit <formula>
+```
+
+### References
+
+- [Formula Cookbook](https://docs.brew.sh/Formula-Cookbook)
