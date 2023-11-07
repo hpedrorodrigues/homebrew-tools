@@ -2,6 +2,12 @@
 
 Personal/non-official formulas/casks.
 
+- Casks
+  - [dockutil](https://github.com/kcrawford/dockutil)
+- Formulas
+  - [sphynx](https://github.com/hpedrorodrigues/sphynx)
+  - [twitter-cleaner](https://github.com/hpedrorodrigues/twitter-cleaner)
+
 ### Testing formulas/casks
 
 The following command(s) can be used to test changes for a new formula or when
