@@ -1,8 +1,10 @@
 class TwitterCleaner < Formula
-  desc "Command-line tool to help you delete tweets, retweets, and favorites from your timeline"
+  desc "Command-line to help delete tweets, retweets, and favorites from your timeline"
   homepage "https://github.com/hpedrorodrigues/twitter-cleaner"
   version "0.1.2"
   license "MIT"
+
+  depends_on "go" => :optional
 
   on_macos do
     if Hardware::CPU.arm?
@@ -50,9 +52,7 @@ class TwitterCleaner < Formula
     end
   end
 
-  depends_on "go" => :optional
-
   test do
-    system "#{bin}/twitter-cleaner --help"
+    system "#{bin}/twitter-cleaner", "--help"
   end
 end
