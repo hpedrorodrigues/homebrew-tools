@@ -15,17 +15,17 @@ class Sphynx < Formula
     end
 
     inreplace "#{bin}/sx" do |s|
-      s.gsub!(/SPHYNX_DIR=.*/, "SPHYNX_DIR=\"#{prefix}\"")
-      s.gsub!(/SPHYNX_CLI_DIR=.*/, "SPHYNX_CLI_DIR=\"${SPHYNX_DIR}/cli\"")
+      s.sub!(/SPHYNX_DIR="(.*?)\n\)"/m, "SPHYNX_DIR=\"#{prefix}\"")
+      s.sub!(/SPHYNX_CLI_DIR=.*/, "SPHYNX_CLI_DIR=\"${SPHYNX_DIR}/cli\"")
     end
 
     inreplace "#{prefix}/cli/.internal/completion/complete" do |s|
-      s.gsub!(/SPHYNX_CLI_DIR=.*/, "SPHYNX_CLI_DIR=\"#{prefix}/cli\"")
+      s.sub!(/SPHYNX_CLI_DIR=.*/, "SPHYNX_CLI_DIR=\"#{prefix}/cli\"")
     end
 
     ["sx.bash", "_sx"].each do |completion|
       inreplace "#{prefix}/cli/.internal/completion/#{completion}" do |s|
-        s.gsub!(/completion_dirname=.*/, "completion_dirname=\"#{prefix}/cli/.internal/completion\"")
+        s.sub!(/completion_dirname=.*/, "completion_dirname=\"#{prefix}/cli/.internal/completion\"")
       end
     end
 
