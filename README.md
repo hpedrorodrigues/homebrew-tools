@@ -3,6 +3,7 @@
 Personal/non-official formulas/casks.
 
 - Formulas
+  - [kubectl-ai]
   - [sphynx]
   - [twitter-cleaner]
 
@@ -30,6 +31,7 @@ coding style violations:
 
 - [Formula Cookbook]
 
+[kubectl-ai]: https://github.com/GoogleCloudPlatform/kubectl-ai
 [sphynx]: https://github.com/hpedrorodrigues/sphynx
 [twitter-cleaner]: https://github.com/hpedrorodrigues/twitter-cleaner
 [Formula Cookbook]: https://docs.brew.sh/Formula-Cookbook
