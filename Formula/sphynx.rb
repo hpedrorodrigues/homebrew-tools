@@ -1,8 +1,8 @@
 class Sphynx < Formula
   desc "Command-line tool to help you with your day to day tasks"
   homepage "https://github.com/hpedrorodrigues/sphynx"
-  url "https://github.com/hpedrorodrigues/sphynx/archive/refs/tags/v0.2.4.tar.gz"
-  sha256 "ebc383ca2ddbfa8d250f3fb8fa6afcfe3e6003d81a1bdd192c4853f028c85e20"
+  url "https://github.com/hpedrorodrigues/sphynx/archive/refs/tags/v0.2.5.tar.gz"
+  sha256 "be8459af39cd3ac377b40d340ee625215cde8f6a2c7b3f43e37f7d41baef22d3"
   license "Apache-2.0"
   head "https://github.com/hpedrorodrigues/sphynx.git", branch: "main"
 
