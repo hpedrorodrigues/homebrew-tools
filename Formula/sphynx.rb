@@ -6,6 +6,8 @@ class Sphynx < Formula
   license "Apache-2.0"
   head "https://github.com/hpedrorodrigues/sphynx.git", branch: "main"
 
+  depends_on "bash"
+
   def install
     bin.install "sx"
     prefix.install "modules/cli"
