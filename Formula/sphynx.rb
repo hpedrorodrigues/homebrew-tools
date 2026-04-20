@@ -12,7 +12,7 @@ class Sphynx < Formula
     bin.install "sx"
     prefix.install "modules/cli"
 
-    %w[fmt lint test workspace workstation].each do |cmd|
+    %w[fmt lint test workstation].each do |cmd|
       rm_r "#{prefix}/cli/#{cmd}"
     end
 
